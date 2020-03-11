@@ -2,19 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:ioschedflutter/scheduleItem.dart';
+import 'package:ioschedflutter/schedulePage.dart';
 
 void main() {
-//  debugPaintSizeEnabled = true;
+  debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final List<Tab> tabs = <Tab>[
-    Tab(text: "Oct 23"),
-    Tab(
-      text: "Oct 24",
-    )
-  ];
+  final List<Tab> tabs = <Tab>[Tab(text: "Oct 23"), Tab(text: "Oct 24")];
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +18,7 @@ class MyApp extends StatelessWidget {
         title: 'Schedule',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primaryColor: Color(0xFF202020),
-          primarySwatch: Colors.green
-        ),
+            primaryColor: Color(0xFF202020), primarySwatch: Colors.green),
         home: DefaultTabController(
           length: tabs.length,
           child: Scaffold(
@@ -45,7 +39,7 @@ class MyApp extends StatelessWidget {
             ),
             body: TabBarView(
               children: tabs.map((Tab tab) {
-                return Container(color: Colors.black, child: ScheduleItem());
+                return Container(color: Colors.black, child: SchedulePage());
               }).toList(),
             ),
           ),
