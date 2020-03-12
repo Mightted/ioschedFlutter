@@ -5,11 +5,21 @@ import 'package:ioschedflutter/scheduleItem.dart';
 import 'package:ioschedflutter/schedulePage.dart';
 
 void main() {
-  debugPaintSizeEnabled = true;
+//  debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State createState() {
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  int _currentIndex = 0;
+  List<String> titles = ["Schedule", "Agenda", "Info"];
+  List<Widget> pages;
   final List<Tab> tabs = <Tab>[Tab(text: "Oct 23"), Tab(text: "Oct 24")];
 
   @override
@@ -32,7 +42,7 @@ class MyApp extends StatelessWidget {
                   child: Icon(Icons.search),
                 )
               ],
-              title: Text('Schedule'),
+              title: Text(titles[_currentIndex]),
               bottom: TabBar(
                 tabs: tabs,
               ),
@@ -42,7 +52,74 @@ class MyApp extends StatelessWidget {
                 return Container(color: Colors.black, child: SchedulePage());
               }).toList(),
             ),
+            floatingActionButton: FloatingActionButton(
+                onPressed: null, child: Icon(Icons.filter_list)),
+            bottomNavigationBar: BottomNavigationBar(
+                backgroundColor: Color(0xFF1B1B1B),
+                onTap: (index) {
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
+                items: getBottomNavItems(
+                    _currentIndex,
+                    [Icons.event, Icons.view_agenda, Icons.info],
+                    ["Schedule", "Agenda", "Info"])
+//              [
+//                BottomNavigationBarItem(
+//                    icon: Icon(
+//                      Icons.event,
+//                      color: Colors.green,
+//                    ),
+//                    title: Text(
+//                      "Schedule",
+//                      style: TextStyle(
+//                        color: Colors.white70,
+//                      ),
+//                    )),
+//                BottomNavigationBarItem(
+//                    icon: Icon(
+//                      Icons.view_agenda,
+//                      color: Colors.white70,
+//                    ),
+//                    title: Text(
+//                      "Agenda",
+//                      style: TextStyle(
+//                        color: Colors.white70,
+//                      ),
+//                    )),
+//                BottomNavigationBarItem(
+//                    icon: Icon(
+//                      Icons.info,
+//                      color: Colors.white70,
+//                    ),
+//                    title: Text(
+//                      "Info",
+//                      style: TextStyle(
+//                        color: Colors.white70,
+//                      ),
+//                    ))
+//              ],
+                ),
           ),
         ));
+  }
+
+  List<BottomNavigationBarItem> getBottomNavItems(
+      int index, List<IconData> icons, List<String> titles) {
+    return icons.map((IconData icon) {
+      return BottomNavigationBarItem(
+          icon: Icon(
+            icon,
+            color: icons.indexOf(icon) == index ? Colors.green : Colors.white70,
+          ),
+          title: Text(
+            titles[icons.indexOf(icon)],
+            style: TextStyle(
+              color:
+                  icons.indexOf(icon) == index ? Colors.green : Colors.white70,
+            ),
+          ));
+    }).toList();
   }
 }
