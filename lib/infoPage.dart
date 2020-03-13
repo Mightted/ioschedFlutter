@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:ioschedflutter/scheduleItem.dart';
 
-class SchedulePage extends StatefulWidget {
+class InfoPage extends StatefulWidget {
   List<String> tabs;
   TabController controller;
 
-  SchedulePage({this.tabs, this.controller});
+  InfoPage({this.tabs, this.controller});
 
   @override
-  State createState() => _ScheduleState();
+  State createState() => _InfoState();
 }
 
-class _ScheduleState extends State<SchedulePage> {
+class _InfoState extends State<InfoPage> {
   @override
   Widget build(BuildContext context) {
     return TabBarView(
-      controller: widget.controller,
-      children: widget.tabs.map((String tab) {
-        return Container(
-          color: Colors.black,
-          child: getScheduleContent(),
-        );
-      }).toList(),
-    );
+        controller: widget.controller,
+        children: widget.tabs.map((String tab) {
+          return Container(
+            color: Colors.black,
+            child: getScheduleContent(),
+          );
+        }).toList());
   }
 
   Widget getScheduleContent() {
