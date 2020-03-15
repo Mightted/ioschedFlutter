@@ -5,7 +5,7 @@ import 'package:ioschedflutter/infoPage.dart';
 import 'package:ioschedflutter/schedulePage.dart';
 
 void main() {
-//  debugPaintSizeEnabled = true;
+  debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
 

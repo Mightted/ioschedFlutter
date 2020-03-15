@@ -10,11 +10,11 @@ class ScheduleItem extends StatelessWidget {
 
   ScheduleItem(
       {this.time,
-      this.isAm = true,
-      this.hasVideo = false,
-      this.title,
-      this.content,
-      this.tags = const []});
+        this.isAm = true,
+        this.hasVideo = false,
+        this.title,
+        this.content,
+        this.tags = const []});
 
   @override
   Widget build(BuildContext context) {
