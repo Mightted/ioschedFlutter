@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ioschedflutter/scheduleItem.dart';
+import 'package:ioschedflutter/info/eventItem.dart';
 
 class InfoPage extends StatefulWidget {
   List<String> tabs;
@@ -25,33 +25,134 @@ class _InfoState extends State<InfoPage> {
   }
 
   Widget getScheduleContent() {
-    return Column(
+    return ListView(
+//      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        ScheduleItem(
-          time: "8:30",
-          hasVideo: true,
-          title: "Keynote",
-          content: "1 hours / Main Stage",
-          tags: <String>[
-            "Android",
-            "Studio & Tooling",
-            "Android TV",
-            "Google Play",
-            "JetPack"
-          ],
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical:18, horizontal: 10),
+          child: Text(
+            "EVENT TYPES",
+            style: TextStyle(color: Colors.white70, fontSize: 16,fontWeight: FontWeight.bold),
+          ),
         ),
-        ScheduleItem(
-          time: "8:30",
-          hasVideo: true,
-          title: "Keynote",
-          content: "1 hours / Main Stage",
-          tags: <String>[
-            "Android",
-            "Studio & Tooling",
-            "Android TV",
-            "Google Play",
-            "JetPack"
-          ],
+        EventItem(
+          child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topLeft,
+                child: CircleAvatar(
+                  radius: 14,
+                  backgroundColor: Colors.green,
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.red, width: 3),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: SizedBox(
+                    height: 30,
+                    width: 64,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                    border: Border.all(color: Colors.blueAccent),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: SizedBox(
+                    height: 30,
+                    width: 100,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        EventItem(
+          child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: CircleAvatar(
+                  radius: 14,
+                  backgroundColor: Colors.green,
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.red, width: 3),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: SizedBox(
+                    height: 30,
+                    width: 64,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.topCenter,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                    border: Border.all(color: Colors.blueAccent),
+                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20)),
+                  ),
+                  child: SizedBox(
+                    height: 60,
+                    width: 100,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        EventItem(
+          child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topCenter,
+                child: CircleAvatar(
+                  radius: 14,
+                  backgroundColor: Colors.green,
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.red, width: 3),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: SizedBox(
+                    height: 100,
+                    width: 32,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.topCenter,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Color(0xFF00004d)),
+                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20)),
+                  ),
+                  child: SizedBox(
+                    height: 60,
+                    width: 100,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ],
     );

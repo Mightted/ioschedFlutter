@@ -38,7 +38,7 @@ class _ScheduleState extends State<SchedulePage> {
             "Studio & Tooling",
             "Android TV",
             "Google Play",
-            "JetPack"
+            "JetPack",
           ],
         ),
         ScheduleItem(
