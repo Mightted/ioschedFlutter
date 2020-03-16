@@ -29,10 +29,13 @@ class _InfoState extends State<InfoPage> {
 //      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.symmetric(vertical:18, horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 10),
           child: Text(
             "EVENT TYPES",
-            style: TextStyle(color: Colors.white70, fontSize: 16,fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: Colors.white70,
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
           ),
         ),
         EventItem(
@@ -104,7 +107,8 @@ class _InfoState extends State<InfoPage> {
                   decoration: BoxDecoration(
                     color: Colors.blueAccent,
                     border: Border.all(color: Colors.blueAccent),
-                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20)),
+                    borderRadius:
+                        BorderRadius.only(bottomLeft: Radius.circular(20)),
                   ),
                   child: SizedBox(
                     height: 60,
@@ -129,10 +133,9 @@ class _InfoState extends State<InfoPage> {
                 alignment: Alignment.centerLeft,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.red, width: 3),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.red
-                  ),
+                      border: Border.all(color: Colors.red, width: 3),
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.red),
                   child: SizedBox(
                     height: 100,
                     width: 32,
@@ -144,7 +147,8 @@ class _InfoState extends State<InfoPage> {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     border: Border.all(color: Color(0xFF00004d), width: 3),
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20)),
+                    borderRadius:
+                        BorderRadius.only(topLeft: Radius.circular(20)),
                   ),
                   child: SizedBox(
                     height: 60,
