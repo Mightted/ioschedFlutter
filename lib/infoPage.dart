@@ -125,7 +125,7 @@ class _InfoState extends State<InfoPage> {
               Align(
                 alignment: Alignment.topCenter,
                 child: CircleAvatar(
-                  radius: 14,
+                  radius: 15,
                   backgroundColor: Colors.green,
                 ),
               ),
@@ -138,7 +138,7 @@ class _InfoState extends State<InfoPage> {
                       color: Colors.red),
                   child: SizedBox(
                     height: 100,
-                    width: 32,
+                    width: 30,
                   ),
                 ),
               ),
@@ -146,16 +146,140 @@ class _InfoState extends State<InfoPage> {
                 alignment: Alignment.bottomRight,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF00004d), width: 3),
+                    border: Border.all(color: Color(0xFF00264d), width: 3),
                     borderRadius:
                         BorderRadius.only(topLeft: Radius.circular(20)),
                   ),
                   child: SizedBox(
-                    height: 60,
-                    width: 60,
+                    height: 66,
+                    width: 66,
                   ),
                 ),
               )
+            ],
+          ),
+        ),
+        EventItem(
+          child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.bottomRight,
+                child: CircleAvatar(
+                  radius: 15,
+                  backgroundColor: Colors.green,
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.blueAccent, width: 3),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: SizedBox(
+                    height: 100,
+                    width: 30,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFF00264d), width: 3),
+                      borderRadius:
+                      BorderRadius.circular(20),
+                      color: Color(0xFF00264d)),
+                  child: SizedBox(
+                    height: 66,
+                    width: 30,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        EventItem(
+          child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.center,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.green, width: 3),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.green
+                  ),
+                  child: SizedBox(
+                    height: 100,
+                    width: 30,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.green, width: 3),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: SizedBox(
+                    height: 100,
+                    width: 30,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFF00264d), width: 3),
+                      borderRadius:
+                      BorderRadius.circular(20),
+                      color: Color(0xFF00264d)),
+                  child: SizedBox(
+                    height: 66,
+                    width: 30,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        EventItem(
+          child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topLeft,
+                child: CircleAvatar(
+                  radius: 15,
+                  backgroundColor: Colors.green,
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(right:20),
+                  child: CircleAvatar(
+                    radius: 15,
+                    backgroundColor:  Color(0xFF00264d),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.blueAccent, width: 3),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.blueAccent
+                  ),
+                  child: SizedBox(
+                    height: 30,
+                    width: 100,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
