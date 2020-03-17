@@ -1,1 +1,1 @@
-# ioschedFlutter
+用Flutter语言编写的仿谷歌开发者大会行程的app，iosched2019的应用。
